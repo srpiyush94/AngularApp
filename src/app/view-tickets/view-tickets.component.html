@@ -1,0 +1,42 @@
+<div class="jumbotron">
+  <div class="container">
+    <table border="1 black solid">
+      <thead>
+        <tr>
+          <th>TicketId</th>
+          <th>PassengerNamr</th>
+          <th>Date Of Journey</th>
+          <th>SourceStation</th>
+          <th>DestStation</th>
+          <th>Email</th>
+          <th>Booking Date</th>
+          <!-- <th>Index</th>
+          <th>Fist</th>
+          <th>Last</th>
+          <th>Even</th>
+          <th>Odd</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ticket of tickets; let i=index; let isFirst=first; let isLast=last; let isEven=even; let isOdd=odd">
+          <td>{{ticket.ticketId}}</td>
+          <td>{{ticket.passengerName | uppercase}}</td>
+          <td>{{ticket.dateOfJourney | date: 'shortDate'}}</td>
+          <td>{{ticket.sourceStation}}</td>
+          <td>{{ticket.destStation}}</td>
+          <td>{{ticket.email}}</td>
+          <td>{{ticket.bookingDate | date: 'short'}}</td>
+          <!-- <td>{{i}}</td>
+          <td>{{isFirst}}</td>
+          <td>{{isLast}}</td>
+          <td>{{isEven}}</td>
+          <td>{{isOdd}}</td> -->
+        </tr>
+        <tr *ngIf="!tickets || tickets.length == 0">
+          <td colspan="7">No Tickets to display</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

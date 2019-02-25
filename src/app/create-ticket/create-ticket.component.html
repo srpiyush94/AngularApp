@@ -1,0 +1,105 @@
+<div class="jumbotron height: 100%">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h3>User Registration</h3>
+        <form name="form" #ticketForm="ngForm" (ngSubmit)=" ticketForm.form.valid && onSubmitingForm()" novalidate>
+
+           <!-- <div class="form-group">
+            <label for="password">Account Number:</label>
+            <input type="text" class="form-control" name="accountNumber"  #accountNumber="ngModel" id="accountNumber" [(ngModel)]="ticket.accountNumber"
+              required [ngClass]="{'is-invalid':ticketForm.submitted && accountNumber.invalid}">
+            <div *ngIf="ticketForm.submitted && accountNumber.invalid" class="invalid-feedback">
+              <div *ngIf="accountNumber.errors.required">Account Number is required</div>
+            </div>
+          </div> -->
+
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" class="form-control" name="firstName" #firstName="ngModel" id="firstName" [(ngModel)]="ticket.firstName"
+              required [ngClass]="{'is-invalid':ticketForm.submitted && firstName.invalid}" placeholder="Enter your first Name">
+            <div *ngIf="ticketForm.submitted && firstName.invalid" class="invalid-feedback">
+              <div *ngIf="firstName.errors.required">First Name is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" class="form-control" name="lastName" #lastName="ngModel" id="lastName" [(ngModel)]="ticket.lastName"
+              required [ngClass]="{'is-invalid':ticketForm.submitted && lastName.invalid}" placeholder="Enter your last Name">
+            <div *ngIf="ticketForm.submitted && lastName.invalid" class="invalid-feedback">
+              <div *ngIf="lastName.errors.required">Last Name is required</div>
+            </div>
+          </div>
+          
+          <!-- <div class="form-group">
+            <label for="dateOfJourney">Date Of Birth:</label>
+            <input type="text" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" 
+                 name="dateOfJourney" #dateOfJourney="ngModel" id="dateOfJourney" 
+                 [(ngModel)]="ticket.dateOfJourney"
+              required [ngClass]="{'is-invalid':ticketForm.submitted && dateOfJourney.invalid }">
+            <div *ngIf="ticketForm.submitted && dateOfJourney.invalid" class="invalid-feedback">
+              <div *ngIf="dateOfJourney.errors.required">Date Of Journey is required</div>
+            </div>
+          </div> -->
+
+          
+          <!-- <div class="form-group">
+            <label for="sourceStation">Source Station:</label>
+            <input type="text" class="form-control" name="sourceStation" #sourceStation="ngModel" id="sourceStation" [(ngModel)]="ticket.sourceStation"
+              required [ngClass]="{'is-invalid':ticketForm.submitted && sourceStation.invalid}">
+            <div *ngIf="ticketForm.submitted && sourceStation.invalid" class="invalid-feedback">
+              <div *ngIf="sourceStation.errors.required">Source Station is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="destStation">Destination Station:</label>
+            <input type="text" class="form-control" name="destStation" #destStation="ngModel" id="destStation" [(ngModel)]="ticket.destStation"
+              required [ngClass]="{'is-invalid':ticketForm.submitted && destStation.invalid}">
+            <div *ngIf="ticketForm.submitted && sourceStation.invalid" class="invalid-feedback">
+              <div *ngIf="destStation.errors.required">Destination Station is required</div>
+            </div>
+          </div> -->
+
+          <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="text" class="form-control" name="email" #email="ngModel" id="email" [(ngModel)]="ticket.email"
+                required email [ngClass]="{'is-invalid':ticketForm.submitted && email.invalid}" placeholder="Enter your email">
+              <div *ngIf="ticketForm.submitted && email.invalid" class="invalid-feedback">
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.errors.email">Email must be a valid email address</div>
+              </div>
+            </div>
+  
+            <!-- <div class="form-group">
+              <label for="userName">userName:</label>
+              <input type="text" class="form-control" name="userName" #userName="ngModel" id="userName" [(ngModel)]="ticket.userName"
+                required [ngClass]="{'is-invalid':ticketForm.submitted && userName.invalid}">
+              <div *ngIf="ticketForm.submitted && userName.invalid" class="invalid-feedback">
+                <div *ngIf="userName.errors.required">User Name is required</div>
+              </div>
+            </div> -->
+  
+            <div class="form-group">
+              <label for="password">password:</label>
+              <input type="password" class="form-control" name="password" #password="ngModel" id="password" [(ngModel)]="ticket.password"
+                required [ngClass]="{'is-invalid':ticketForm.submitted && password.invalid}" placeholder="Enter the password">
+              <div *ngIf="ticketForm.submitted && password.invalid" class="invalid-feedback">
+                <div *ngIf="password.errors.required">password is required</div>
+              </div>
+            </div>
+
+            
+  
+
+
+
+          <div class="form-group">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

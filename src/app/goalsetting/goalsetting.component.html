@@ -1,0 +1,46 @@
+<div class="jumbotron height: 100%">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h3>Goal Setting</h3>
+<form name="form" #goalsettingForm="ngForm" (ngSubmit)=" goalsettingForm.form.valid && onSubmitingForm()" novalidate>
+ 
+  <div class="form-group">
+    <label for="spendingPattern">Spending Pattern: </label>
+    <select class="form-control" id="spendingPattern" name="spendingPattern" #spendingPattern="ngModel"  [(ngModel)]="goalsetting.spendingPattern"
+     required [ngClass]="{'is-invalid':goalsettingForm.submitted && spendingPattern.invalid}">
+      <option *ngFor="let spendingPattern of spendingPatterns" [value]="spendingPattern">{{spendingPattern}}</option>
+    </select>
+    <div *ngIf="goalsettingForm.submitted && spendingPattern.invalid" class="invalid-feedback">
+      <div *ngIf="spendingPattern.errors.required">SpendingPattern is required</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+      <label for="amount">Amount :</label>
+      <input type="text" class="form-control" name="amount" #amount="ngModel" id="amount" [(ngModel)]="goalsetting.amount"
+       required [ngClass]="{'is-invalid':goalsettingForm.submitted && amount.invalid}" placeholder="Enter Amount">
+      <div *ngIf="goalsettingForm.submitted && amount.invalid" class="invalid-feedback">
+        <div *ngIf="amount.errors.required">Amount is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label for="financialGoal">Financial Goal: </label>
+        <select class="form-control" id="financialGoal" name="financialGoal" #financialGoal="ngModel"  [(ngModel)]="goalsetting.financialGoal"
+         required [ngClass]="{'is-invalid':goalsettingForm.submitted && financialGoal.invalid}">
+          <option *ngFor="let financialGoal of financialGoals" [value]="financialGoal">{{financialGoal}}</option>
+        </select>
+        <div *ngIf="goalsettingForm.submitted && financialGoal.invalid" class="invalid-feedback">
+          <div *ngIf="financialGoal.errors.required">FinancialGoal is required</div>
+        </div>
+      </div>
+
+          <button type="submit"  class="btn btn-primary">Submit</button>
+          <button (click)="GoToDashBoard()" class="btn btn-primary float-right">go to dashboard</button>
+      
+</form>
+</div>
+</div>
+</div>
+</div>
